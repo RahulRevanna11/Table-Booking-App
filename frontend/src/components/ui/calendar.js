@@ -5,9 +5,9 @@ import { DayPicker, DayPickerProps } from "react-day-picker";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "react-day-picker/dist/style.css";
 
-const cn = (...classes: string[]) => classes.filter(Boolean).join(" ");
+const cn = (...classes) => classes.filter(Boolean).join(" ");
 
-const buttonVariants = ({ variant }: { variant: string }) => {
+const buttonVariants = ({ variant }) => {
   switch (variant) {
     case "outline":
       return "border border-gray-300 text-gray-700";
@@ -18,11 +18,11 @@ const buttonVariants = ({ variant }: { variant: string }) => {
   }
 };
 
-export type CalendarProps = Omit<DayPickerProps, "classNames"> & {
-  className?: string;
-};
+// export type CalendarProps = Omit<DayPickerProps, "classNames"> & {
+//   className?: string;
+// };
 
-export function Calendar({ className, classNames, ...props }: CalendarProps) {
+export function Calendar({ className, classNames, ...props }) {
   return (
     <DayPicker
       {...props}
@@ -64,3 +64,4 @@ export function Calendar({ className, classNames, ...props }: CalendarProps) {
     />
   );
 }
+
