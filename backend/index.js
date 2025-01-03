@@ -15,8 +15,7 @@ console.log(process.env.FRONTEND_URL);
 // Configure CORS to allow all origins
 app.use(cors({
   origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+ 
 }));
 
 // Middleware
