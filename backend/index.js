@@ -11,6 +11,7 @@ const app = express();
 app.use(corsMiddleware);
 // Connect to MongoDB
 connectDB();
+console.log(process.env.FRONTEND_URL);
 
 // Middleware
 app.use(cors());
