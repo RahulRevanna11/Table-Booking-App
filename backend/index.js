@@ -5,16 +5,21 @@ const connectDB = require('./config/database');
 const bookingRoutes = require('./routes/bookingRoutes');
 const tableRoutes = require('./routes/tableRoutes');
 const { errorHandler } = require('./middleware/errorHandler');
-const corsMiddleware = require('./middleware/cors');
 
 const app = express();
-app.use(corsMiddleware);
+
 // Connect to MongoDB
 connectDB();
 console.log(process.env.FRONTEND_URL);
 
+// Configure CORS to allow all origins
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // Routes
@@ -24,10 +29,11 @@ app.get('/', (req, res) => {
   console.log('Root route accessed'); // Debugging log
   return res.send(`<p>${process.env.FRONTEND_URL}</p>`);
 });
+
 // Error handling
 // app.use(errorHandler);
 
-const PORT =  3001;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
