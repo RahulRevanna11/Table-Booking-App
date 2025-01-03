@@ -22,7 +22,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/tables', tableRoutes);
 app.get('/', (req, res) => {
   console.log('Root route accessed'); // Debugging log
-  return res.send('<p>Hello World</p>');
+  return res.send(`<p>${process.env.FRONTEND_URL}</p>`);
 });
 // Error handling
 // app.use(errorHandler);
