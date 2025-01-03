@@ -3,12 +3,8 @@ import * as React from "react";
 // Utility function for conditional class names
 import { cn } from "@/lib/utils";
 
-// Interface for InputProps extending native input attributes
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
 // Input component using forwardRef for enhanced compatibility
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, type = "text", ...props }, ref) => {
     return (
       <input

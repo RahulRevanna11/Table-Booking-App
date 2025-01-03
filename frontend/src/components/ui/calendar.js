@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { DayPicker, DayPickerProps } from "react-day-picker";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { DayPicker } from "react-day-picker";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import "react-day-picker/dist/style.css";
 
 const cn = (...classes) => classes.filter(Boolean).join(" ");
@@ -57,10 +57,10 @@ export function Calendar({ className, classNames, ...props }) {
         day_disabled: "text-muted-foreground opacity-50",
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
-      }}
+      // components={{
+      //   IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
+      //   IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
+      // }}
     />
   );
 }
